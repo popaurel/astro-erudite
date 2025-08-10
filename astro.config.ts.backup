@@ -23,13 +23,6 @@ import mcp from 'astro-mcp';
 
 export default defineConfig({
   site: 'https://finance.aurelpop.com',
-  // Explicitly set to static output for best performance with Cloudflare Pages
-  output: 'static',
-  // Build configuration optimized for static deployment
-  build: {
-    // Inline styles for better performance (critical CSS)
-    inlineStylesheets: 'auto',
-  },
   integrations: [expressiveCode({
     themes: ['github-light', 'github-dark'],
     plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
@@ -75,15 +68,6 @@ export default defineConfig({
   }), mdx(), react(), sitemap(), icon(), mcp()],
   vite: {
     plugins: [tailwindcss()],
-    // Build optimizations for production
-    build: {
-      // Better tree-shaking
-      rollupOptions: {
-        output: {
-          manualChunks: undefined,
-        },
-      },
-    },
   },
   server: {
     port: 1234,
@@ -91,11 +75,6 @@ export default defineConfig({
   },
   devToolbar: {
     enabled: false,
-  },
-  // Prefetch configuration for better performance
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: 'viewport',
   },
   markdown: {
     syntaxHighlight: false,
