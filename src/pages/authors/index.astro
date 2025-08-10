@@ -1,15 +1,11 @@
 ---
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
-import { getAllAuthors } from '@/lib/data-utils'
-
-const authors = await getAllAuthors()
 ---
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Authors" />
+  <div class="text-center py-8">
+    <p class="text-muted-foreground">Authors page coming soon.</p>
+  </div>
 </Layout>
-))} ) : (
-<p class="text-muted-foreground text-center">No authors found.</p>
-) }
-
