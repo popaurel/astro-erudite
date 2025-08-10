@@ -15,10 +15,10 @@ export const NAV_LINKS: SocialLink[] = [
     href: '/tags/ai',
     label: 'ai',
   },
-  {
-    href: '/tags/trading',
-    label: 'trading',
-  },
+  // {
+  //   href: '/tags/trading',
+  //   label: 'trading',
+  // },
   {
     href: '/tags/investing',
     label: 'investing',
