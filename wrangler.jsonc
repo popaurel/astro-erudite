@@ -1,0 +1,7 @@
+{
+  "name": "finance",
+  "compatibility_date": "2025-08-10",
+  "assets": {
+    "directory": "./dist"
+  }
+}
