@@ -1,5 +1,4 @@
 ---
-import AuthorCard from '@/components/AuthorCard.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
 import { getAllAuthors } from '@/lib/data-utils'
@@ -9,11 +8,8 @@ const authors = await getAllAuthors()
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Authors" />
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p class="text-muted-foreground text-center">No authors found.</p>
-    )
-  }
 </Layout>
+))} ) : (
+<p class="text-muted-foreground text-center">No authors found.</p>
+) }
+
