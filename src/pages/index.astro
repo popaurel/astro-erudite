@@ -1,0 +1,76 @@
+---
+import BlogCard from '@/components/BlogCard.astro'
+import Link from '@/components/Link.astro'
+import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { SITE } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { getRecentPosts } from '@/lib/data-utils'
+
+const blog = await getRecentPosts(SITE.featuredPostCount)
+---
+
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="Home" />
+  <div class="min-w-full">
+    <div class="prose mb-8">
+      <p class="mt-0">
+        Welcome to your essential guide to navigating the intersection of
+        artificial intelligence and the financial markets. We are in the midst
+        of a technological revolution, and AI is fundamentally reshaping every
+        industry, creating unprecedented opportunities and challenges for
+        investors and traders.
+      </p>
+      <p>
+        This blog is dedicated to moving beyond the headlines and providing
+        deep, actionable analysis on how to capitalize on this transformation.
+        Here, we'll explore:
+        <ul>
+          <li>
+            <b>AI-Driven Trading:</b>
+            Unpacking the strategies and technologies that are redefining market
+            dynamics.
+          </li>
+          <li>
+            <b>Investing in the AI Ecosystem:</b>
+            Identifying opportunities not just in AI model developers, but across
+            the entire value chain—from the specialized hardware and cloud infrastructure
+            that form its foundation to the data and applications that bring it to
+            life.
+          </li>
+          <li>
+            <b>Market Intelligence:</b>
+            Analyzing how AI is changing the landscape of financial analysis, risk management, and long-term value creation.
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- <h2 class="mb-4 text-2xl font-medium">Example Projects Listing</h2>
+      <div class="flex flex-col gap-4">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div> -->
+  </div>
+  <section class="flex flex-col gap-y-4">
+    <ul class="flex flex-col gap-y-4">
+      {
+        blog.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({ variant: 'ghost' }) + ' group'}
+      >
+        See all posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div>
+  </section>
+</Layout>
