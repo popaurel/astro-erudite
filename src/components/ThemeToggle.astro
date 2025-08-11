@@ -38,6 +38,11 @@ import { Icon } from 'astro-icon/components'
     theme === 'dark' ? 'scheme-dark' : 'scheme-light',
   )
   window.localStorage.setItem('theme', theme)
+  
+  // Set initial cookie banner theme
+  if (theme === 'dark') {
+    document.documentElement.classList.add('cc--darkmode')
+  }
 </script>
 
 <script>
@@ -58,6 +63,22 @@ import { Icon } from 'astro-icon/components'
     })
 
     localStorage.setItem('theme', newTheme)
+    
+    // Toggle cookie banner theme
+    if (window.CookieConsent) {
+      // Update cookie banner theme immediately
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('cc--darkmode')
+        // Force cookie banner to update by adding/removing classes on all banner elements
+        const bannerElements = document.querySelectorAll('.cc__main, .cc__consent-modal, .cc__preferences-modal')
+        bannerElements.forEach(el => el.classList.add('cc--darkmode'))
+      } else {
+        document.documentElement.classList.remove('cc--darkmode')
+        // Force cookie banner to update by adding/removing classes on all banner elements
+        const bannerElements = document.querySelectorAll('.cc__main, .cc__consent-modal, .cc__preferences-modal')
+        bannerElements.forEach(el => el.classList.remove('cc--darkmode'))
+      }
+    }
   }
 
   function initThemeToggle() {

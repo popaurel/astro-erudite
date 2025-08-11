@@ -74,31 +74,7 @@ export default defineConfig({
     react(),
     sitemap(),
     icon(),
-    cookieconsent({
-      language: {
-        default: 'en',
-        translations: {
-          en: 'en'
-        }
-      },
-      categories: {
-        necessary: { readOnly: true },
-      },
-      guiOptions: {
-        consentModal: {
-          layout: 'cloud',
-          position: 'bottom right',
-          equalWeightButtons: true,
-          flipButtons: false,
-        },
-        preferencesModal: {
-          layout: 'box',
-          position: 'right',
-          equalWeightButtons: true,
-          flipButtons: false,
-        },
-      },
-    }),
+
   ],
   vite: {
     plugins: [tailwindcss()],
