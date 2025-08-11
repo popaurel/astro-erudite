@@ -23,7 +23,8 @@ export default defineConfig({
   site: 'https://finance.aurelpop.com',
   output: 'static',
   build: {
-    inlineStylesheets: 'auto',
+    // Inline all styles to avoid render-blocking CSS requests like /_astro/about.css
+    inlineStylesheets: 'always',
   },
   integrations: [
     expressiveCode({
