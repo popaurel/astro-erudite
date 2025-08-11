@@ -4,7 +4,6 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
-import cookieconsent from '@jop-software/astro-cookieconsent'
 
 import expressiveCode from 'astro-expressive-code'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
