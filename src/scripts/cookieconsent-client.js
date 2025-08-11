@@ -1,6 +1,24 @@
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import * as CookieConsent from "vanilla-cookieconsent";
 
+// Add custom CSS to match your website's font
+const customCSS = `
+  .cc__main,
+  .cc__consent-modal,
+  .cc__preferences-modal,
+  .cc__main *,
+  .cc__consent-modal *,
+  .cc__preferences-modal * {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
+    font-weight: 300 !important;
+  }
+`;
+
+// Inject the custom CSS
+const style = document.createElement('style');
+style.textContent = customCSS;
+document.head.appendChild(style);
+
 // Initialize cookie consent
 CookieConsent.run({
   guiOptions: {
