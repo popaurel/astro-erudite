@@ -112,8 +112,8 @@ const tocSections = await getTOCSections(currentPostId)
               <div class="flex w-full items-center justify-center gap-x-2 py-2 sm:w-fit sm:px-2 sm:py-0 first:sm:pl-0 last:sm:pr-0">
                 {authors.map((author) => (
                   <div class="flex items-center gap-x-1.5">
-                    <Image
-                      src={author.avatar}
+                    <img
+                      src={typeof author.avatar === 'string' ? author.avatar : author.avatar.src}
                       alt={author.name}
                       width={20}
                       height={20}

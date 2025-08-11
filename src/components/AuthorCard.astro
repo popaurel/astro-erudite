@@ -27,7 +27,7 @@ const socialLinks: SocialLink[] = [
   <div class="flex flex-wrap gap-4">
     <AvatarComponent
       client:load
-      src={avatar}
+      src={typeof avatar === 'string' ? avatar : avatar.src}
       alt={`Avatar of ${name}`}
       fallback={name[0]}
       className={cn(

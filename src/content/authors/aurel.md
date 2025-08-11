@@ -1,6 +1,6 @@
 ---
 name: 'Aurel'
-avatar: '/static/aurel-avatar.jpg'
+avatar: './aurel-avatar.jpg'
 bio: 'Expert in AI-powered trading strategies and financial markets. Helping investors understand and capitalize on the convergence of artificial intelligence and finance.'
 twitter: 'https://x.com/aurel_pop_'
 github: 'https://github.com/popaurel'

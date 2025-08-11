@@ -60,8 +60,8 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
             <>
               {authors.map((author) => (
                 <div class="flex items-center gap-x-1.5">
-                  <Image
-                    src={author.avatar}
+                  <img
+                    src={typeof author.avatar === 'string' ? author.avatar : author.avatar.src}
                     alt={author.name}
                     width={20}
                     height={20}

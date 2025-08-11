@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettier": "prettier --write **/*.{ts,tsx,css,astro} --ignore-path .gitignore",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "images:optimize": "bash ./scripts/imagemagick-optimize.sh"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
