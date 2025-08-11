@@ -21,6 +21,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   site: 'https://finance.aurelpop.com',
+  base: './',
   output: 'static',
   build: {
     // Inline all styles to avoid render-blocking CSS requests like /_astro/about.css
