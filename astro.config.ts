@@ -21,6 +21,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 import mcp from 'astro-mcp'
 
+import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
+
 export default defineConfig({
   site: 'https://finance.aurelpop.com',
   // Explicitly set to static output for best performance with Cloudflare Pages
@@ -30,56 +32,49 @@ export default defineConfig({
     // Inline styles for better performance (critical CSS)
     inlineStylesheets: 'auto',
   },
-  integrations: [
-    expressiveCode({
-      themes: ['github-light', 'github-dark'],
-      plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
-      useDarkModeMediaQuery: false,
-      themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
-      defaultProps: {
-        wrap: true,
-        collapseStyle: 'collapsible-auto',
-        overridesByLang: {
-          'ansi,bat,bash,batch,cmd,console,powershell,ps,ps1,psd1,psm1,sh,shell,shellscript,shellsession,text,zsh':
-            {
-              showLineNumbers: false,
-            },
-        },
+  integrations: [expressiveCode({
+    themes: ['github-light', 'github-dark'],
+    plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
+    useDarkModeMediaQuery: false,
+    themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
+    defaultProps: {
+      wrap: true,
+      collapseStyle: 'collapsible-auto',
+      overridesByLang: {
+        'ansi,bat,bash,batch,cmd,console,powershell,ps,ps1,psd1,psm1,sh,shell,shellscript,shellsession,text,zsh':
+          {
+            showLineNumbers: false,
+          },
       },
-      styleOverrides: {
-        codeFontSize: '0.75rem',
-        borderColor: 'var(--border)',
-        codeFontFamily: 'var(--font-mono)',
-        codeBackground:
+    },
+    styleOverrides: {
+      codeFontSize: '0.75rem',
+      borderColor: 'var(--border)',
+      codeFontFamily: 'var(--font-mono)',
+      codeBackground:
+        'color-mix(in oklab, var(--secondary) 25%, transparent)',
+      frames: {
+        editorActiveTabForeground: 'var(--muted-foreground)',
+        editorActiveTabBackground:
           'color-mix(in oklab, var(--secondary) 25%, transparent)',
-        frames: {
-          editorActiveTabForeground: 'var(--muted-foreground)',
-          editorActiveTabBackground:
-            'color-mix(in oklab, var(--secondary) 25%, transparent)',
-          editorActiveTabIndicatorBottomColor: 'transparent',
-          editorActiveTabIndicatorTopColor: 'transparent',
-          editorTabBorderRadius: '0',
-          editorTabBarBackground: 'transparent',
-          editorTabBarBorderBottomColor: 'transparent',
-          frameBoxShadowCssValue: 'none',
-          terminalBackground:
-            'color-mix(in oklab, var(--secondary) 25%, transparent)',
-          terminalTitlebarBackground: 'transparent',
-          terminalTitlebarBorderBottomColor: 'transparent',
-          terminalTitlebarForeground: 'var(--muted-foreground)',
-        },
-        lineNumbers: {
-          foreground: 'var(--muted-foreground)',
-        },
-        uiFontFamily: 'var(--font-sans)',
+        editorActiveTabIndicatorBottomColor: 'transparent',
+        editorActiveTabIndicatorTopColor: 'transparent',
+        editorTabBorderRadius: '0',
+        editorTabBarBackground: 'transparent',
+        editorTabBarBorderBottomColor: 'transparent',
+        frameBoxShadowCssValue: 'none',
+        terminalBackground:
+          'color-mix(in oklab, var(--secondary) 25%, transparent)',
+        terminalTitlebarBackground: 'transparent',
+        terminalTitlebarBorderBottomColor: 'transparent',
+        terminalTitlebarForeground: 'var(--muted-foreground)',
       },
-    }),
-    mdx(),
-    react(),
-    sitemap(),
-    icon(),
-    mcp(),
-  ],
+      lineNumbers: {
+        foreground: 'var(--muted-foreground)',
+      },
+      uiFontFamily: 'var(--font-sans)',
+    },
+  }), mdx(), react(), sitemap(), icon(), mcp(), jopSoftwarecookieconsent()],
   vite: {
     plugins: [tailwindcss()],
     // Build optimizations for production
