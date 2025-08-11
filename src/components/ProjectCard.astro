@@ -29,6 +29,9 @@ const { project } = Astro.props
             alt={project.data.name}
             width={1200}
             height={630}
+            widths={[256, 320, 480, 640, 960, 1200]}
+            sizes="(min-width: 640px) 256px, 100vw"
+            loading="lazy"
             class="object-cover"
           />
         </div>

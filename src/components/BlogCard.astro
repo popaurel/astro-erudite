@@ -1,5 +1,4 @@
 ---
-import AvatarComponent from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import {
@@ -40,6 +39,9 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
             alt={entry.data.title}
             width={1200}
             height={630}
+            widths={[256, 320, 480, 640, 960, 1200]}
+            sizes="(min-width: 640px) 256px, 100vw"
+            loading="lazy"
             class="object-cover"
           />
         </div>
@@ -58,12 +60,13 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
             <>
               {authors.map((author) => (
                 <div class="flex items-center gap-x-1.5">
-                  <AvatarComponent
-                    client:load
+                  <Image
                     src={author.avatar}
                     alt={author.name}
-                    fallback={author.name[0]}
-                    className="size-5 rounded-full"
+                    width={20}
+                    height={20}
+                    class="rounded-full"
+                    loading="lazy"
                   />
                   <span>{author.name}</span>
                 </div>

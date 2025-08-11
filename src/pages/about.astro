@@ -1,6 +1,8 @@
 ---
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import aurelAvatar from '../../public/static/aurel-avatar.jpg'
 ---
 
 <Layout class="max-w-3xl">
@@ -10,10 +12,15 @@ import Layout from '@/layouts/Layout.astro'
       <div
         class="mb-8 flex flex-col items-center gap-6 sm:flex-row sm:items-start"
       >
-        <img
-          src="/static/aurel-avatar.jpg"
+        <!-- Use Astro Image for responsive avatar -->
+        <Image
+          src={aurelAvatar}
           alt="Aurel"
+          width={128}
+          height={128}
           class="h-32 w-32 rounded-full object-cover shadow-lg"
+          sizes="128px"
+          loading="lazy"
         />
         <div class="text-center sm:text-left">
           <h1 class="mb-2 text-3xl font-bold">Aurel Pop</h1>
