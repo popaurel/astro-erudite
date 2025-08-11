@@ -45,7 +45,7 @@ import Favicons from './Favicons.astro'
   <Favicons />
   <ClientRouter />
   <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6468fc44347e41beb868589d320aa454"}'></script>
+  <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6468fc44347e41beb868589d320aa454"}'></script>
   <!-- End Cloudflare Web Analytics -->
   <slot />
 </head>
