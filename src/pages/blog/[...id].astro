@@ -90,6 +90,7 @@ const tocSections = await getTOCSections(currentPostId)
         widths={[600, 768, 960, 1200]}
         sizes="(min-width: 1024px) 768px, (min-width: 640px) 600px, 100vw"
         loading="eager"
+        fetchpriority="high"
           class="col-span-full mx-auto w-full max-w-5xl object-cover"
         />
       )
@@ -117,6 +118,7 @@ const tocSections = await getTOCSections(currentPostId)
                       alt={author.name}
                       width={20}
                       height={20}
+                      decoding="async"
                       loading="lazy"
                       class="rounded-full"
                     />

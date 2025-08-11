@@ -42,6 +42,7 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
             widths={[256, 320, 480, 640, 960, 1200]}
             sizes="(min-width: 640px) 256px, 100vw"
             loading="lazy"
+            decoding="async"
             class="object-cover"
           />
         </div>
@@ -65,6 +66,7 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
                     alt={author.name}
                     width={20}
                     height={20}
+                    decoding="async"
                     class="rounded-full"
                     loading="lazy"
                   />
