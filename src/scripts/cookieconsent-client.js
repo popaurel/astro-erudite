@@ -48,7 +48,7 @@ CookieConsent.run({
       en: {
         consentModal: {
           title: "Hello smart investor, it's cookie time!",
-          description: 'We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic. For these reasons, we may share your site usage data with our analytics partners. By clicking "Accept all" you agree to our website\'s cookie use as described in our <a href=\"#privacy\">Privacy Policy</a>. You can change your cookie settings at any time by clicking "Manage preferences".',
+          description: 'We use essentialy cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic. For these reasons, we may share your site usage data with our analytics partners. By clicking "Accept all" you agree to our website\'s cookie use as described in our <a href=\"#privacy\">Privacy Policy</a>. You can change your cookie settings at any time by clicking "Manage preferences".',
           acceptNecessaryBtn: "Reject all",
           acceptAllBtn: "Accept all",
           showPreferencesBtn: "Manage preferences",
