@@ -7,7 +7,7 @@ CookieConsent.run({
     guiOptions: {
         consentModal: {
             layout: "box",
-            position: "bottom left",
+            position: "bottom right",
             equalWeightButtons: true,
             flipButtons: false
         },
@@ -22,7 +22,7 @@ CookieConsent.run({
         necessary: {
             readOnly: true
         },
-        analytics: {}
+        // analytics: {}
     },
     language: {
         default: "en",
@@ -32,15 +32,15 @@ CookieConsent.run({
                 consentModal: {
                     title: "Hello traveller, it's cookie time!",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
-                    acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
+                    acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Manage preferences",
                     footer: "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>"
                 },
                 preferencesModal: {
                     title: "Consent Preferences Center",
-                    acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
+                    acceptAllBtn: "Accept all",
                     savePreferencesBtn: "Save preferences",
                     closeIconLabel: "Close modal",
                     serviceCounterLabel: "Service|Services",

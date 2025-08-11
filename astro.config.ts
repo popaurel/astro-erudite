@@ -19,17 +19,12 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 import tailwindcss from '@tailwindcss/vite'
 
-import mcp from 'astro-mcp'
-
-import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
+import cookieconsent from '@jop-software/astro-cookieconsent';
 
 export default defineConfig({
   site: 'https://finance.aurelpop.com',
-  // Explicitly set to static output for best performance with Cloudflare Pages
   output: 'static',
-  // Build configuration optimized for static deployment
   build: {
-    // Inline styles for better performance (critical CSS)
     inlineStylesheets: 'auto',
   },
   integrations: [expressiveCode({
@@ -47,6 +42,22 @@ export default defineConfig({
           },
       },
     },
+    // cookieconsent({
+    //   guiOptions: {
+    //     consentModal: {
+    //       layout: 'cloud',
+    //       position: 'bottom right',
+    //       equalWeightButtons: true,
+    //       flipButtons: false
+    //     },
+    //     preferencesModal: {
+    //       layout: "box",
+    //       position: "right",
+    //       equalWeightButtons: true,
+    //       flipButtons: false
+    //     },
+    //   },
+    // }),
     styleOverrides: {
       codeFontSize: '0.75rem',
       borderColor: 'var(--border)',
@@ -74,7 +85,7 @@ export default defineConfig({
       },
       uiFontFamily: 'var(--font-sans)',
     },
-  }), mdx(), react(), sitemap(), icon(), mcp(), jopSoftwarecookieconsent()],
+  }), mdx(), react(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
     // Build optimizations for production
