@@ -1,30 +1,5 @@
 @import 'tailwindcss';
 
-/* OpenSans font faces */
-@font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme inline {
