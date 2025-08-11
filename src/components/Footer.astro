@@ -10,9 +10,18 @@ import SocialIcons from './SocialIcons.astro'
   >
     <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
       <span class="text-muted-foreground text-sm">
-        &copy; {new Date().getFullYear()} aurelpop.com. All rghts reserved.
+        <a href='#privacy'>Privacy Policy</a>
       </span>
       <Separator orientation="vertical" className="hidden h-4! sm:block" />
+      <span class="text-muted-foreground text-sm">
+        <a href='#terms'>Terms and conditions</a>
+      </span>
+      <Separator orientation="vertical" className="hidden h-4! sm:block" />
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
+      <span class="text-muted-foreground text-sm">
+        &copy; {new Date().getFullYear()} aurelpop.com. All rights reserved.
+      </span>
     </div>
     <SocialIcons links={SOCIAL_LINKS} />
     <script type="module" src="/src/scripts/cookieconsent.js"></script>
