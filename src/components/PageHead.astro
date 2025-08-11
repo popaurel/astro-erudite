@@ -12,7 +12,8 @@ const {
   description = SITE.description,
   noindex = false,
 } = Astro.props
-const image = new URL('/public/static/1200x630.png', Astro.site)
+import ogImage from '@/assets/1200x630.png'
+const image = new URL(ogImage.src, Astro.site)
 ---
 
 <title>{`${title} | ${SITE.title}`}</title>
