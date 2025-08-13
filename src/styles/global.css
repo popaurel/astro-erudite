@@ -1,9 +1,8 @@
 @import 'tailwindcss';
 
+@import '@fontsource/inter/300.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
-@import '@fontsource/inter/900.css';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -41,8 +40,11 @@
 }
 
 :root {
+  /* Light mode: slightly dimmed text for better legibility */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* pure white */
+  --foreground: oklch(0.12 0 0);
+  /* dark gray, softer than black */
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
@@ -57,22 +59,26 @@
 }
 
 [data-theme='dark'] {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  /* Dark mode: softer black background, slightly off-white text, small contrast boost for reading */
+  --background: oklch(0.12 0 0);
+  /* dark, not pure black */
+  --foreground: oklch(0.93 0 0);
+  /* soft white */
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.27 0 0);
+  --secondary-foreground: oklch(0.93 0 0);
+  --muted: oklch(0.27 0 0);
+  --muted-foreground: oklch(0.73 0 0);
+  --accent: oklch(0.27 0 0);
+  --accent-foreground: oklch(0.93 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --ring: oklch(0.556 0 0);
 }
 
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -82,37 +88,56 @@
   }
 }
 
-/* Global font application with increased base size */
+/* ===== GLOBAL FONT & THEME-SPECIFIC RULES ===== */
 body {
   font-family: var(--font-sans);
-  font-weight: 300; /* Use Light weight as default */
-  font-size: 1.125rem; /* Increased base font size from 1rem to 1.125rem (18px) */
-  line-height: 1.75; /* Improved line height for readability */
+  font-weight: 300;
+  font-size: 1.125rem;
+  /* 18px */
+  line-height: 1.75;
+  /* light mode line-height */
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headlines use system font SemiBold */
+[data-theme='dark'] body {
+  font-weight: 400;
+  line-height: 1.6;
+  /* tighter for dark mode */
+  letter-spacing: 0.2px;
+  /* small tracking for better readability */
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headlines */
 h1,
 h2,
 h3 {
   font-family: var(--font-sans);
   font-weight: 600;
+  color: var(--foreground);
 }
 
-/* Bold text uses system font SemiBold */
+/* Bold text */
 b,
 strong {
   font-family: var(--font-sans);
   font-weight: 600;
 }
 
-/* Italic text uses system font */
+/* Italic text */
 i,
 em {
   font-family: var(--font-sans);
   font-style: italic;
 }
 
-/* Regular weight text (for elements that need it) */
+/* Regular weight utility */
 .font-regular {
   font-family: var(--font-sans);
   font-weight: 400;

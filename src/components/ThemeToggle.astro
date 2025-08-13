@@ -38,7 +38,7 @@ import { Icon } from 'astro-icon/components'
     theme === 'dark' ? 'scheme-dark' : 'scheme-light',
   )
   window.localStorage.setItem('theme', theme)
-  
+
   // Set initial cookie banner theme
   if (theme === 'dark') {
     document.documentElement.classList.add('cc--darkmode')
@@ -63,7 +63,7 @@ import { Icon } from 'astro-icon/components'
     })
 
     localStorage.setItem('theme', newTheme)
-    
+
     // Toggle cookie banner theme
     if (window.CookieConsent) {
       // Update cookie banner theme immediately
