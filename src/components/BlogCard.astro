@@ -33,7 +33,7 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
   >
     {
       entry.data.image && (
-        <div class="max-w-3xs sm:shrink-0">
+        <div class="max-w-[130px] sm:shrink-0">
           <Image
             src={entry.data.image}
             alt={entry.data.title}
@@ -64,8 +64,8 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
                   <img
                     src={typeof author.avatar === 'string' ? author.avatar : author.avatar.src}
                     alt={author.name}
-                    width={20}
-                    height={20}
+                    width={30}
+                    height={30}
                     decoding="async"
                     class="rounded-full"
                     loading="lazy"
