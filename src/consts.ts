@@ -5,10 +5,10 @@ export const SITE: Site = {
   description:
     'Your essential guide to understanding and capitalizing on the convergence of AI in trading and investing.',
   href: 'https://finance.aurelpop.com',
-  author: 'Aurel',
+  author: 'aurel',
   locale: 'en-US',
-  featuredPostCount: 3,
-  postsPerPage: 5,
+  featuredPostCount: 2,
+  postsPerPage: 6,
 }
 export const NAV_LINKS: SocialLink[] = [
   {
