@@ -43,6 +43,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'LinkedIn',
   },
   {
+    href: 'mailto:hi@aurelpop.com',
+    label: 'Email',
+  },
+  {
     href: '/rss.xml',
     label: 'RSS',
   },

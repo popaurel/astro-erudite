@@ -12,6 +12,30 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Home" />
+
+  <section class="flex flex-col gap-y-4">
+    <ul class="flex flex-col gap-y-4">
+      {
+        blog.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+<!--     <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({ variant: 'ghost' }) + ' group'}
+      >
+        See all posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div> -->
+  </section>
+
   <div class="min-w-full">
     <div class="prose mb-8">
       <p class="mt-0">
@@ -52,26 +76,4 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
         {projects.map((project) => <ProjectCard project={project} />)}
       </div> -->
   </div>
-  <section class="flex flex-col gap-y-4">
-    <ul class="flex flex-col gap-y-4">
-      {
-        blog.map((post) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex justify-center">
-      <Link
-        href="/blog"
-        class={buttonVariants({ variant: 'ghost' }) + ' group'}
-      >
-        See all posts <span
-          class="ml-1.5 transition-transform group-hover:translate-x-1"
-          >&rarr;</span
-        >
-      </Link>
-    </div>
-  </section>
 </Layout>

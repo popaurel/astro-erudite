@@ -1,15 +1,32 @@
 ---
+import notFoundImage from '@/assets/storyset/404.svg'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
 import { cn } from '@/lib/utils'
+import { Image } from 'astro:assets'
 ---
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="404" />
-  <Breadcrumbs items={[{ label: '???', icon: 'lucide:circle-help' }]} />
+  <!-- <Breadcrumbs items={[{ label: '???', icon: 'lucide:circle-help' }]} /> -->
+  {
+    notFoundImage && (
+      <Image
+        src={notFoundImage}
+        alt={'404 Not Found'}
+        width={1200}
+        height={630}
+        widths={[600, 768, 960, 1200]}
+        sizes="(min-width: 1024px) 768px, (min-width: 640px) 600px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="col-span-full mx-auto w-full max-w-5xl object-cover"
+      />
+    )
+  }
 
   <section
     class="flex flex-col items-center justify-center gap-y-4 text-center"
