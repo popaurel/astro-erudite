@@ -7,7 +7,7 @@ export const SITE: Site = {
   href: 'https://finance.aurelpop.com',
   author: 'aurel',
   locale: 'en-US',
-  featuredPostCount: 2,
+  featuredPostCount: 3,
   postsPerPage: 6,
 }
 export const NAV_LINKS: SocialLink[] = [
