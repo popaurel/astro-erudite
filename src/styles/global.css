@@ -1,10 +1,15 @@
 @import 'tailwindcss';
 
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/900.css';
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme inline {
   --font-sans:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --font-mono:
     SFMono-Regular, Menlo, Monaco, Consolas,
